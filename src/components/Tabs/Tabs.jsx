@@ -1,6 +1,10 @@
 import React from 'react';
 
 export const Tabs = ({ tabs = [], activeTabId, onTabSelected }) => {
+  if (tabs.length === 0) {
+    return null;
+  }
+
   const currentTab = tabs.find(tab => tab.id === activeTabId) || tabs[0];
 
   return (
